@@ -31,7 +31,7 @@ namespace Farmcoz_mod_tool
             }
             else
             {
-                MessageBox.Show("Nazwa moda i lokalizacja nie mog¹ byæ puste");
+                MessageBox.Show("Mod name and location cannot be empty");
             }
         }
 
@@ -59,8 +59,14 @@ namespace Farmcoz_mod_tool
             }
         }
 
-        private void selectMod(string name) {
+        private void selectMod(string name)
+        {
             this.Text = "Farmcoz mod tool - " + name;
+        }
+
+        private void treeViewModList_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            refreshTree();
         }
     }
 }

@@ -19,5 +19,10 @@ namespace Farmcoz_mod_tool
         {
             return Directory.GetDirectories(loc);
         }
+
+        public static string GetUserModsLocation()
+        {
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "farmcoz", "mods");
+        }
     }
 }

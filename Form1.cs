@@ -1,4 +1,5 @@
 using System;
+using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -9,6 +10,12 @@ namespace Farmcoz_mod_tool
         public Form1()
         {
             InitializeComponent();
+            Application.ApplicationExit += new EventHandler(this.OnApplicationExit);
+        }
+
+        private void OnApplicationExit(object sender, EventArgs e)
+        {
+            //...
         }
 
         private void btn_CreateMod_Click(object sender, EventArgs e)
@@ -19,6 +26,7 @@ namespace Farmcoz_mod_tool
             {
                 FileManager.createDir(loc, modName);
                 tb_ModName.Text = null;
+                selectMod(modName);
                 refreshTree();
             }
             else
@@ -39,7 +47,20 @@ namespace Farmcoz_mod_tool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            tb_loc.Text = FileManager.GetUserModsLocation();
             refreshTree();
+        }
+
+        private void treeViewModList_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node != null)
+            {
+                selectMod(e.Node.Text);
+            }
+        }
+
+        private void selectMod(string name) {
+            this.Text = "Farmcoz mod tool - " + name;
         }
     }
 }

@@ -99,7 +99,6 @@ namespace Farmcoz_mod_tool
             recipes_ListBox = new ListBox();
             tabPage5 = new TabPage();
             label20 = new Label();
-            btn_deleteImage = new Button();
             btn_addImage = new Button();
             pictureBox = new PixelBox();
             images_ListBox = new ListBox();
@@ -777,7 +776,6 @@ namespace Farmcoz_mod_tool
             // tabPage5
             // 
             tabPage5.Controls.Add(label20);
-            tabPage5.Controls.Add(btn_deleteImage);
             tabPage5.Controls.Add(btn_addImage);
             tabPage5.Controls.Add(pictureBox);
             tabPage5.Controls.Add(images_ListBox);
@@ -800,20 +798,11 @@ namespace Farmcoz_mod_tool
             label20.TabIndex = 4;
             label20.Text = "Select image";
             // 
-            // btn_deleteImage
-            // 
-            btn_deleteImage.Location = new Point(329, 6);
-            btn_deleteImage.Name = "btn_deleteImage";
-            btn_deleteImage.Size = new Size(157, 40);
-            btn_deleteImage.TabIndex = 3;
-            btn_deleteImage.Text = "Delete selected image";
-            btn_deleteImage.UseVisualStyleBackColor = true;
-            // 
             // btn_addImage
             // 
             btn_addImage.Location = new Point(166, 6);
             btn_addImage.Name = "btn_addImage";
-            btn_addImage.Size = new Size(157, 40);
+            btn_addImage.Size = new Size(320, 40);
             btn_addImage.TabIndex = 2;
             btn_addImage.Text = "Add image";
             btn_addImage.UseVisualStyleBackColor = true;
@@ -967,12 +956,11 @@ namespace Farmcoz_mod_tool
         private TextBox recipes_tb_result;
         private Label label16;
         private Label label15;
-        private Button btn_deleteImage;
         private Button btn_addImage;
-        private PictureBox pictureBox;
         private ListBox images_ListBox;
         private ListBox lb_modList;
         private Label label20;
         private OpenFileDialog openFileDialog1;
+        private PixelBox pictureBox;
     }
 }

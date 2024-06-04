@@ -62,10 +62,10 @@ namespace Farmcoz_mod_tool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            tabControl1.Visible = false;
             currentMod = "";
             tb_loc.Text = FileManager.GetUserModsLocation();
             refreshModList();
-            refreshPictures();
 
         }
 
@@ -77,7 +77,14 @@ namespace Farmcoz_mod_tool
 
         private void lb_modList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectMod(lb_modList.SelectedItem.ToString());
+            if (!(lb_modList.SelectedItems.Count == 0))
+            {
+                selectMod(lb_modList.SelectedItem.ToString());
+                tabControl1.Visible = true;
+                pictureBox.Image = null;
+                label20.Text = "Select image";
+                refreshPictures();
+            }
         }
 
         private void btn_addImage_Click(object sender, EventArgs e)
@@ -95,7 +102,7 @@ namespace Farmcoz_mod_tool
                 int height = image.Height;
                 if (width == 64 && height == 64)
                 {
-                    File.Copy(openFileDialog1.FileName, destFile, true);
+                    File.Copy(filename, destFile, true);
 
                     images_ListBox.Items.Add(Path.GetFileName(filename));
                     selectImage(Path.GetFileName(filename));
@@ -106,18 +113,57 @@ namespace Farmcoz_mod_tool
                 }
             }
             refreshPictures();
+            if (!(images_ListBox.SelectedItems.Count == 0))
+                selectImage(images_ListBox.SelectedItems[images_ListBox.SelectedItems.Count].ToString());
         }
 
         private void images_ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectImage(images_ListBox.SelectedItem.ToString());
+            if (!(images_ListBox.SelectedItems.Count == 0))
+            {
+                string selectedItem = images_ListBox.SelectedItem.ToString();
+                selectImage(selectedItem);
+            }
         }
+
 
         private void selectImage(string fileName)
         {
-            pictureBox.Load(Path.Combine(tb_loc.Text, fileName));
+            pictureBox.Load(Path.Combine(tb_loc.Text, currentMod, fileName));
             label20.Text = fileName;
         }
+
+        //private void btn_deleteImage_Click(object sender, EventArgs e)
+        //{
+        //    if (images_ListBox.SelectedItem != null)
+        //    {
+        //        DialogResult result = MessageBox.Show("Are you sure you want to delete: " + images_ListBox.SelectedItem.ToString(), "Confirmation of deletion", MessageBoxButtons.OKCancel);
+        //
+        //        if (result == DialogResult.OK)
+        //        {
+        //            try
+        //            {
+        //                string destFile = Path.Combine(Path.Combine(tb_loc.Text, currentMod), images_ListBox.SelectedItem.ToString());
+        //                if (File.Exists(destFile))
+        //                {
+        //                    MessageBox.Show("Funkcja usuwania jest tymczasowo niedostêpna.");
+        //                    images_ListBox.Items.Remove(images_ListBox.SelectedItem);
+        //                    pictureBox.Image = null;
+        //                    label20.Text = "Select image";
+        //                    File.Delete(destFile);
+        //                }
+        //                else
+        //                {
+        //                    MessageBox.Show("File does not exist:" + destFile);
+        //                }
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                MessageBox.Show("Error deleting file: " + ex.Message);
+        //            }
+        //        }
+        //    }
+        //}
 
     }
 }

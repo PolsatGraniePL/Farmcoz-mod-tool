@@ -20,6 +20,12 @@ namespace Farmcoz_mod_tool
             return Directory.GetDirectories(loc);
         }
 
+        public static string[] getImages(string loc)
+        {
+            var files = Directory.EnumerateFiles(Path.Combine(loc, Form1.currentMod));
+            return files.Select(Path.GetFileName).ToArray();
+        }
+
         public static string GetUserModsLocation()
         {
             return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "farmcoz", "mods");

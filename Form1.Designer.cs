@@ -1,4 +1,6 @@
-﻿namespace Farmcoz_mod_tool
+﻿using Farmcoz_mod_tool.component;
+
+namespace Farmcoz_mod_tool
 {
     partial class Form1
     {
@@ -29,81 +31,117 @@
         private void InitializeComponent()
         {
             btn_CreateMod = new Button();
-            treeViewModList = new TreeView();
             tb_ModName = new TextBox();
             tb_loc = new TextBox();
             label1 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             label2 = new Label();
-            textBox1 = new TextBox();
+            config_tb_name = new TextBox();
             tabPage2 = new TabPage();
             groupBox2 = new GroupBox();
-            numericUpDown2 = new NumericUpDown();
+            items_nb_growing_time = new NumericUpDown();
             label9 = new Label();
-            textBox3 = new TextBox();
+            items_tb_grow_id = new TextBox();
             label8 = new Label();
             groupBox1 = new GroupBox();
-            checkBox12 = new CheckBox();
-            checkBox11 = new CheckBox();
-            checkBox10 = new CheckBox();
-            checkBox9 = new CheckBox();
-            checkBox8 = new CheckBox();
-            checkBox7 = new CheckBox();
-            checkBox6 = new CheckBox();
-            checkBox5 = new CheckBox();
-            checkBox4 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
-            numericUpDown1 = new NumericUpDown();
-            textBox5 = new TextBox();
-            comboBox1 = new ComboBox();
-            textBox2 = new TextBox();
+            items_chb_sound_wooden = new CheckBox();
+            items_chb_outlinable = new CheckBox();
+            items_chb_entitable = new CheckBox();
+            items_chb_grow_at_night = new CheckBox();
+            items_chb_collidable = new CheckBox();
+            items_chb_sound_organic = new CheckBox();
+            items_chb_eatable = new CheckBox();
+            items_chb_compostable = new CheckBox();
+            items_chb_ununlockable = new CheckBox();
+            items_chb_plantable = new CheckBox();
+            items_chb_understructable = new CheckBox();
+            items_chb_unplacable = new CheckBox();
+            items_nb_stacksize = new NumericUpDown();
+            items_tb_description = new TextBox();
+            items_cb_texture = new ComboBox();
+            items_tb_name = new TextBox();
             label7 = new Label();
             label3 = new Label();
             label6 = new Label();
             label4 = new Label();
             label5 = new Label();
-            X = new ListBox();
-            button1 = new Button();
+            items_ListBox = new ListBox();
+            btn_addItem = new Button();
             tabPage3 = new TabPage();
+            btn_addDrop = new Button();
+            groupBox3 = new GroupBox();
+            drops_nb_maxCount = new NumericUpDown();
+            drops_nb_probability = new NumericUpDown();
+            label13 = new Label();
+            label12 = new Label();
+            drops_tb_dropID = new TextBox();
+            label11 = new Label();
+            drops_tb_fromID = new TextBox();
+            label10 = new Label();
+            drops_ListBox = new ListBox();
             tabPage4 = new TabPage();
+            groupBox5 = new GroupBox();
+            label18 = new Label();
+            recipes_tb_secondItem = new TextBox();
+            recipes_nb_secondItemCount = new NumericUpDown();
+            label19 = new Label();
+            btn_addRecipe = new Button();
+            groupBox4 = new GroupBox();
+            label17 = new Label();
+            recipes_nb_resultCount = new NumericUpDown();
+            recipes_tb_result = new TextBox();
+            label16 = new Label();
+            label15 = new Label();
+            recipes_nb_firstItemCount = new NumericUpDown();
+            recipes_tb_firstItem = new TextBox();
+            label14 = new Label();
+            recipes_ListBox = new ListBox();
             tabPage5 = new TabPage();
+            label20 = new Label();
+            btn_deleteImage = new Button();
+            btn_addImage = new Button();
+            pictureBox = new PixelBox();
+            images_ListBox = new ListBox();
+            lb_modList = new ListBox();
+            openFileDialog1 = new OpenFileDialog();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)items_nb_growing_time).BeginInit();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)items_nb_stacksize).BeginInit();
+            tabPage3.SuspendLayout();
+            groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)drops_nb_maxCount).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)drops_nb_probability).BeginInit();
+            tabPage4.SuspendLayout();
+            groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)recipes_nb_secondItemCount).BeginInit();
+            groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)recipes_nb_resultCount).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)recipes_nb_firstItemCount).BeginInit();
+            tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
             // btn_CreateMod
             // 
             btn_CreateMod.Location = new Point(12, 45);
             btn_CreateMod.Name = "btn_CreateMod";
-            btn_CreateMod.Size = new Size(102, 23);
+            btn_CreateMod.Size = new Size(171, 23);
             btn_CreateMod.TabIndex = 0;
             btn_CreateMod.Text = "Create mod";
             btn_CreateMod.UseVisualStyleBackColor = true;
             btn_CreateMod.Click += btn_CreateMod_Click;
             // 
-            // treeViewModList
-            // 
-            treeViewModList.Location = new Point(12, 74);
-            treeViewModList.Name = "treeViewModList";
-            treeViewModList.Size = new Size(263, 454);
-            treeViewModList.TabIndex = 1;
-            treeViewModList.AfterSelect += treeViewModList_AfterSelect;
-            treeViewModList.NodeMouseClick += treeViewModList_NodeMouseClick;
-            // 
             // tb_ModName
             // 
-            tb_ModName.Location = new Point(120, 45);
+            tb_ModName.Location = new Point(12, 74);
             tb_ModName.Name = "tb_ModName";
             tb_ModName.PlaceholderText = "Mod name";
-            tb_ModName.Size = new Size(155, 23);
+            tb_ModName.Size = new Size(171, 23);
             tb_ModName.TabIndex = 2;
             // 
             // tb_loc
@@ -111,7 +149,7 @@
             tb_loc.Location = new Point(104, 12);
             tb_loc.Name = "tb_loc";
             tb_loc.PlaceholderText = "Mods folder location";
-            tb_loc.Size = new Size(684, 23);
+            tb_loc.Size = new Size(595, 23);
             tb_loc.TabIndex = 3;
             // 
             // label1
@@ -130,20 +168,20 @@
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
             tabControl1.Controls.Add(tabPage5);
-            tabControl1.Location = new Point(281, 45);
+            tabControl1.Location = new Point(189, 45);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(507, 483);
+            tabControl1.Size = new Size(514, 483);
             tabControl1.TabIndex = 5;
             // 
             // tabPage1
             // 
             tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(textBox1);
+            tabPage1.Controls.Add(config_tb_name);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(499, 455);
+            tabPage1.Size = new Size(506, 455);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "config.json";
             tabPage1.UseVisualStyleBackColor = true;
@@ -157,32 +195,32 @@
             label2.TabIndex = 1;
             label2.Text = "Name:";
             // 
-            // textBox1
+            // config_tb_name
             // 
-            textBox1.Location = new Point(54, 11);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(439, 23);
-            textBox1.TabIndex = 0;
+            config_tb_name.Location = new Point(54, 11);
+            config_tb_name.Name = "config_tb_name";
+            config_tb_name.Size = new Size(446, 23);
+            config_tb_name.TabIndex = 0;
             // 
             // tabPage2
             // 
             tabPage2.Controls.Add(groupBox2);
             tabPage2.Controls.Add(groupBox1);
-            tabPage2.Controls.Add(X);
-            tabPage2.Controls.Add(button1);
+            tabPage2.Controls.Add(items_ListBox);
+            tabPage2.Controls.Add(btn_addItem);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(499, 455);
+            tabPage2.Size = new Size(506, 455);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "items.json";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(numericUpDown2);
+            groupBox2.Controls.Add(items_nb_growing_time);
             groupBox2.Controls.Add(label9);
-            groupBox2.Controls.Add(textBox3);
+            groupBox2.Controls.Add(items_tb_grow_id);
             groupBox2.Controls.Add(label8);
             groupBox2.Location = new Point(161, 320);
             groupBox2.Name = "groupBox2";
@@ -191,12 +229,12 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Grow";
             // 
-            // numericUpDown2
+            // items_nb_growing_time
             // 
-            numericUpDown2.Location = new Point(94, 52);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(232, 23);
-            numericUpDown2.TabIndex = 11;
+            items_nb_growing_time.Location = new Point(94, 52);
+            items_nb_growing_time.Name = "items_nb_growing_time";
+            items_nb_growing_time.Size = new Size(232, 23);
+            items_nb_growing_time.TabIndex = 11;
             // 
             // label9
             // 
@@ -207,12 +245,12 @@
             label9.TabIndex = 11;
             label9.Text = "Growing time:";
             // 
-            // textBox3
+            // items_tb_grow_id
             // 
-            textBox3.Location = new Point(70, 22);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(256, 23);
-            textBox3.TabIndex = 8;
+            items_tb_grow_id.Location = new Point(70, 22);
+            items_tb_grow_id.Name = "items_tb_grow_id";
+            items_tb_grow_id.Size = new Size(256, 23);
+            items_tb_grow_id.TabIndex = 8;
             // 
             // label8
             // 
@@ -225,22 +263,22 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(checkBox12);
-            groupBox1.Controls.Add(checkBox11);
-            groupBox1.Controls.Add(checkBox10);
-            groupBox1.Controls.Add(checkBox9);
-            groupBox1.Controls.Add(checkBox8);
-            groupBox1.Controls.Add(checkBox7);
-            groupBox1.Controls.Add(checkBox6);
-            groupBox1.Controls.Add(checkBox5);
-            groupBox1.Controls.Add(checkBox4);
-            groupBox1.Controls.Add(checkBox3);
-            groupBox1.Controls.Add(checkBox2);
-            groupBox1.Controls.Add(checkBox1);
-            groupBox1.Controls.Add(numericUpDown1);
-            groupBox1.Controls.Add(textBox5);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(items_chb_sound_wooden);
+            groupBox1.Controls.Add(items_chb_outlinable);
+            groupBox1.Controls.Add(items_chb_entitable);
+            groupBox1.Controls.Add(items_chb_grow_at_night);
+            groupBox1.Controls.Add(items_chb_collidable);
+            groupBox1.Controls.Add(items_chb_sound_organic);
+            groupBox1.Controls.Add(items_chb_eatable);
+            groupBox1.Controls.Add(items_chb_compostable);
+            groupBox1.Controls.Add(items_chb_ununlockable);
+            groupBox1.Controls.Add(items_chb_plantable);
+            groupBox1.Controls.Add(items_chb_understructable);
+            groupBox1.Controls.Add(items_chb_unplacable);
+            groupBox1.Controls.Add(items_nb_stacksize);
+            groupBox1.Controls.Add(items_tb_description);
+            groupBox1.Controls.Add(items_cb_texture);
+            groupBox1.Controls.Add(items_tb_name);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label6);
@@ -253,154 +291,154 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Default";
             // 
-            // checkBox12
+            // items_chb_sound_wooden
             // 
-            checkBox12.AutoSize = true;
-            checkBox12.Location = new Point(182, 154);
-            checkBox12.Name = "checkBox12";
-            checkBox12.Size = new Size(105, 19);
-            checkBox12.TabIndex = 22;
-            checkBox12.Text = "sound wooden";
-            checkBox12.UseVisualStyleBackColor = true;
+            items_chb_sound_wooden.AutoSize = true;
+            items_chb_sound_wooden.Location = new Point(182, 154);
+            items_chb_sound_wooden.Name = "items_chb_sound_wooden";
+            items_chb_sound_wooden.Size = new Size(105, 19);
+            items_chb_sound_wooden.TabIndex = 22;
+            items_chb_sound_wooden.Text = "sound wooden";
+            items_chb_sound_wooden.UseVisualStyleBackColor = true;
             // 
-            // checkBox11
+            // items_chb_outlinable
             // 
-            checkBox11.AutoSize = true;
-            checkBox11.Location = new Point(182, 279);
-            checkBox11.Name = "checkBox11";
-            checkBox11.Size = new Size(79, 19);
-            checkBox11.TabIndex = 21;
-            checkBox11.Text = "outlinable";
-            checkBox11.UseVisualStyleBackColor = true;
+            items_chb_outlinable.AutoSize = true;
+            items_chb_outlinable.Location = new Point(182, 279);
+            items_chb_outlinable.Name = "items_chb_outlinable";
+            items_chb_outlinable.Size = new Size(79, 19);
+            items_chb_outlinable.TabIndex = 21;
+            items_chb_outlinable.Text = "outlinable";
+            items_chb_outlinable.UseVisualStyleBackColor = true;
             // 
-            // checkBox10
+            // items_chb_entitable
             // 
-            checkBox10.AutoSize = true;
-            checkBox10.Location = new Point(182, 254);
-            checkBox10.Name = "checkBox10";
-            checkBox10.Size = new Size(72, 19);
-            checkBox10.TabIndex = 20;
-            checkBox10.Text = "entitable";
-            checkBox10.UseVisualStyleBackColor = true;
+            items_chb_entitable.AutoSize = true;
+            items_chb_entitable.Location = new Point(182, 254);
+            items_chb_entitable.Name = "items_chb_entitable";
+            items_chb_entitable.Size = new Size(72, 19);
+            items_chb_entitable.TabIndex = 20;
+            items_chb_entitable.Text = "entitable";
+            items_chb_entitable.UseVisualStyleBackColor = true;
             // 
-            // checkBox9
+            // items_chb_grow_at_night
             // 
-            checkBox9.AutoSize = true;
-            checkBox9.Location = new Point(182, 229);
-            checkBox9.Name = "checkBox9";
-            checkBox9.Size = new Size(97, 19);
-            checkBox9.TabIndex = 19;
-            checkBox9.Text = "grow at night";
-            checkBox9.UseVisualStyleBackColor = true;
+            items_chb_grow_at_night.AutoSize = true;
+            items_chb_grow_at_night.Location = new Point(182, 229);
+            items_chb_grow_at_night.Name = "items_chb_grow_at_night";
+            items_chb_grow_at_night.Size = new Size(97, 19);
+            items_chb_grow_at_night.TabIndex = 19;
+            items_chb_grow_at_night.Text = "grow at night";
+            items_chb_grow_at_night.UseVisualStyleBackColor = true;
             // 
-            // checkBox8
+            // items_chb_collidable
             // 
-            checkBox8.AutoSize = true;
-            checkBox8.Location = new Point(182, 204);
-            checkBox8.Name = "checkBox8";
-            checkBox8.Size = new Size(77, 19);
-            checkBox8.TabIndex = 18;
-            checkBox8.Text = "collidable";
-            checkBox8.UseVisualStyleBackColor = true;
+            items_chb_collidable.AutoSize = true;
+            items_chb_collidable.Location = new Point(182, 204);
+            items_chb_collidable.Name = "items_chb_collidable";
+            items_chb_collidable.Size = new Size(77, 19);
+            items_chb_collidable.TabIndex = 18;
+            items_chb_collidable.Text = "collidable";
+            items_chb_collidable.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // items_chb_sound_organic
             // 
-            checkBox7.AutoSize = true;
-            checkBox7.Location = new Point(182, 179);
-            checkBox7.Name = "checkBox7";
-            checkBox7.Size = new Size(102, 19);
-            checkBox7.TabIndex = 17;
-            checkBox7.Text = "sound organic";
-            checkBox7.UseVisualStyleBackColor = true;
+            items_chb_sound_organic.AutoSize = true;
+            items_chb_sound_organic.Location = new Point(182, 179);
+            items_chb_sound_organic.Name = "items_chb_sound_organic";
+            items_chb_sound_organic.Size = new Size(102, 19);
+            items_chb_sound_organic.TabIndex = 17;
+            items_chb_sound_organic.Text = "sound organic";
+            items_chb_sound_organic.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // items_chb_eatable
             // 
-            checkBox6.AutoSize = true;
-            checkBox6.Location = new Point(54, 279);
-            checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(64, 19);
-            checkBox6.TabIndex = 16;
-            checkBox6.Text = "eatable";
-            checkBox6.UseVisualStyleBackColor = true;
+            items_chb_eatable.AutoSize = true;
+            items_chb_eatable.Location = new Point(54, 279);
+            items_chb_eatable.Name = "items_chb_eatable";
+            items_chb_eatable.Size = new Size(64, 19);
+            items_chb_eatable.TabIndex = 16;
+            items_chb_eatable.Text = "eatable";
+            items_chb_eatable.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // items_chb_compostable
             // 
-            checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(54, 254);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(95, 19);
-            checkBox5.TabIndex = 15;
-            checkBox5.Text = "compostable";
-            checkBox5.UseVisualStyleBackColor = true;
+            items_chb_compostable.AutoSize = true;
+            items_chb_compostable.Location = new Point(54, 254);
+            items_chb_compostable.Name = "items_chb_compostable";
+            items_chb_compostable.Size = new Size(95, 19);
+            items_chb_compostable.TabIndex = 15;
+            items_chb_compostable.Text = "compostable";
+            items_chb_compostable.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // items_chb_ununlockable
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(54, 229);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(98, 19);
-            checkBox4.TabIndex = 14;
-            checkBox4.Text = "ununlockable";
-            checkBox4.UseVisualStyleBackColor = true;
+            items_chb_ununlockable.AutoSize = true;
+            items_chb_ununlockable.Location = new Point(54, 229);
+            items_chb_ununlockable.Name = "items_chb_ununlockable";
+            items_chb_ununlockable.Size = new Size(98, 19);
+            items_chb_ununlockable.TabIndex = 14;
+            items_chb_ununlockable.Text = "ununlockable";
+            items_chb_ununlockable.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // items_chb_plantable
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(54, 204);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(75, 19);
-            checkBox3.TabIndex = 13;
-            checkBox3.Text = "plantable";
-            checkBox3.UseVisualStyleBackColor = true;
+            items_chb_plantable.AutoSize = true;
+            items_chb_plantable.Location = new Point(54, 204);
+            items_chb_plantable.Name = "items_chb_plantable";
+            items_chb_plantable.Size = new Size(75, 19);
+            items_chb_plantable.TabIndex = 13;
+            items_chb_plantable.Text = "plantable";
+            items_chb_plantable.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // items_chb_understructable
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(54, 179);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(109, 19);
-            checkBox2.TabIndex = 12;
-            checkBox2.Text = "understructable";
-            checkBox2.UseVisualStyleBackColor = true;
+            items_chb_understructable.AutoSize = true;
+            items_chb_understructable.Location = new Point(54, 179);
+            items_chb_understructable.Name = "items_chb_understructable";
+            items_chb_understructable.Size = new Size(109, 19);
+            items_chb_understructable.TabIndex = 12;
+            items_chb_understructable.Text = "understructable";
+            items_chb_understructable.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // items_chb_unplacable
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(54, 154);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(84, 19);
-            checkBox1.TabIndex = 11;
-            checkBox1.Text = "unplacable";
-            checkBox1.UseVisualStyleBackColor = true;
+            items_chb_unplacable.AutoSize = true;
+            items_chb_unplacable.Location = new Point(54, 154);
+            items_chb_unplacable.Name = "items_chb_unplacable";
+            items_chb_unplacable.Size = new Size(84, 19);
+            items_chb_unplacable.TabIndex = 11;
+            items_chb_unplacable.Text = "unplacable";
+            items_chb_unplacable.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // items_nb_stacksize
             // 
-            numericUpDown1.Location = new Point(72, 110);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(254, 23);
-            numericUpDown1.TabIndex = 10;
+            items_nb_stacksize.Location = new Point(72, 110);
+            items_nb_stacksize.Name = "items_nb_stacksize";
+            items_nb_stacksize.Size = new Size(254, 23);
+            items_nb_stacksize.TabIndex = 10;
             // 
-            // textBox5
+            // items_tb_description
             // 
-            textBox5.Location = new Point(82, 81);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(244, 23);
-            textBox5.TabIndex = 9;
+            items_tb_description.Location = new Point(82, 81);
+            items_tb_description.Name = "items_tb_description";
+            items_tb_description.Size = new Size(244, 23);
+            items_tb_description.TabIndex = 9;
             // 
-            // comboBox1
+            // items_cb_texture
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(60, 51);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(266, 23);
-            comboBox1.TabIndex = 8;
+            items_cb_texture.FormattingEnabled = true;
+            items_cb_texture.Location = new Point(60, 51);
+            items_cb_texture.Name = "items_cb_texture";
+            items_cb_texture.Size = new Size(266, 23);
+            items_cb_texture.TabIndex = 8;
             // 
-            // textBox2
+            // items_tb_name
             // 
-            textBox2.Location = new Point(54, 22);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(272, 23);
-            textBox2.TabIndex = 2;
+            items_tb_name.Location = new Point(54, 22);
+            items_tb_name.Name = "items_tb_name";
+            items_tb_name.Size = new Size(272, 23);
+            items_tb_name.TabIndex = 2;
             // 
             // label7
             // 
@@ -447,64 +485,384 @@
             label5.TabIndex = 5;
             label5.Text = "Description:";
             // 
-            // X
+            // items_ListBox
             // 
-            X.FormattingEnabled = true;
-            X.ItemHeight = 15;
-            X.Location = new Point(6, 8);
-            X.Name = "X";
-            X.Size = new Size(149, 439);
-            X.TabIndex = 1;
+            items_ListBox.FormattingEnabled = true;
+            items_ListBox.ItemHeight = 15;
+            items_ListBox.Location = new Point(6, 8);
+            items_ListBox.Name = "items_ListBox";
+            items_ListBox.Size = new Size(149, 439);
+            items_ListBox.TabIndex = 1;
             // 
-            // button1
+            // btn_addItem
             // 
-            button1.Location = new Point(161, 413);
-            button1.Name = "button1";
-            button1.Size = new Size(332, 34);
-            button1.TabIndex = 0;
-            button1.Text = "Add item";
-            button1.UseVisualStyleBackColor = true;
+            btn_addItem.Location = new Point(161, 413);
+            btn_addItem.Name = "btn_addItem";
+            btn_addItem.Size = new Size(332, 34);
+            btn_addItem.TabIndex = 0;
+            btn_addItem.Text = "Add item";
+            btn_addItem.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(btn_addDrop);
+            tabPage3.Controls.Add(groupBox3);
+            tabPage3.Controls.Add(drops_ListBox);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(499, 455);
+            tabPage3.Size = new Size(506, 455);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "drops.json";
             tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btn_addDrop
+            // 
+            btn_addDrop.Location = new Point(161, 411);
+            btn_addDrop.Name = "btn_addDrop";
+            btn_addDrop.Size = new Size(332, 34);
+            btn_addDrop.TabIndex = 2;
+            btn_addDrop.Text = "Add drop";
+            btn_addDrop.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(drops_nb_maxCount);
+            groupBox3.Controls.Add(drops_nb_probability);
+            groupBox3.Controls.Add(label13);
+            groupBox3.Controls.Add(label12);
+            groupBox3.Controls.Add(drops_tb_dropID);
+            groupBox3.Controls.Add(label11);
+            groupBox3.Controls.Add(drops_tb_fromID);
+            groupBox3.Controls.Add(label10);
+            groupBox3.Location = new Point(161, 6);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(332, 399);
+            groupBox3.TabIndex = 1;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Default";
+            // 
+            // drops_nb_maxCount
+            // 
+            drops_nb_maxCount.Location = new Point(79, 80);
+            drops_nb_maxCount.Name = "drops_nb_maxCount";
+            drops_nb_maxCount.Size = new Size(247, 23);
+            drops_nb_maxCount.TabIndex = 8;
+            // 
+            // drops_nb_probability
+            // 
+            drops_nb_probability.Location = new Point(79, 110);
+            drops_nb_probability.Name = "drops_nb_probability";
+            drops_nb_probability.Size = new Size(247, 23);
+            drops_nb_probability.TabIndex = 7;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(6, 112);
+            label13.Name = "label13";
+            label13.Size = new Size(67, 15);
+            label13.TabIndex = 6;
+            label13.Text = "Probability:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(6, 83);
+            label12.Name = "label12";
+            label12.Size = new Size(67, 15);
+            label12.TabIndex = 4;
+            label12.Text = "Max count:";
+            // 
+            // drops_tb_dropID
+            // 
+            drops_tb_dropID.Location = new Point(63, 51);
+            drops_tb_dropID.Name = "drops_tb_dropID";
+            drops_tb_dropID.Size = new Size(263, 23);
+            drops_tb_dropID.TabIndex = 3;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(6, 54);
+            label11.Name = "label11";
+            label11.Size = new Size(49, 15);
+            label11.TabIndex = 2;
+            label11.Text = "Drop id:";
+            // 
+            // drops_tb_fromID
+            // 
+            drops_tb_fromID.Location = new Point(63, 22);
+            drops_tb_fromID.Name = "drops_tb_fromID";
+            drops_tb_fromID.Size = new Size(263, 23);
+            drops_tb_fromID.TabIndex = 1;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(6, 25);
+            label10.Name = "label10";
+            label10.Size = new Size(51, 15);
+            label10.TabIndex = 0;
+            label10.Text = "From id:";
+            // 
+            // drops_ListBox
+            // 
+            drops_ListBox.FormattingEnabled = true;
+            drops_ListBox.ItemHeight = 15;
+            drops_ListBox.Items.AddRange(new object[] { "" });
+            drops_ListBox.Location = new Point(6, 6);
+            drops_ListBox.Name = "drops_ListBox";
+            drops_ListBox.Size = new Size(149, 439);
+            drops_ListBox.TabIndex = 0;
+            // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(groupBox5);
+            tabPage4.Controls.Add(btn_addRecipe);
+            tabPage4.Controls.Add(groupBox4);
+            tabPage4.Controls.Add(recipes_ListBox);
             tabPage4.Location = new Point(4, 24);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(499, 455);
+            tabPage4.Size = new Size(506, 455);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "recipes.json";
             tabPage4.UseVisualStyleBackColor = true;
             // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(label18);
+            groupBox5.Controls.Add(recipes_tb_secondItem);
+            groupBox5.Controls.Add(recipes_nb_secondItemCount);
+            groupBox5.Controls.Add(label19);
+            groupBox5.Location = new Point(161, 191);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(332, 214);
+            groupBox5.TabIndex = 3;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Second slot";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(6, 53);
+            label18.Name = "label18";
+            label18.Size = new Size(110, 15);
+            label18.TabIndex = 11;
+            label18.Text = "Second item count:";
+            // 
+            // recipes_tb_secondItem
+            // 
+            recipes_tb_secondItem.Location = new Point(88, 22);
+            recipes_tb_secondItem.Name = "recipes_tb_secondItem";
+            recipes_tb_secondItem.Size = new Size(238, 23);
+            recipes_tb_secondItem.TabIndex = 9;
+            // 
+            // recipes_nb_secondItemCount
+            // 
+            recipes_nb_secondItemCount.Location = new Point(122, 51);
+            recipes_nb_secondItemCount.Name = "recipes_nb_secondItemCount";
+            recipes_nb_secondItemCount.Size = new Size(204, 23);
+            recipes_nb_secondItemCount.TabIndex = 10;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(6, 25);
+            label19.Name = "label19";
+            label19.Size = new Size(76, 15);
+            label19.TabIndex = 8;
+            label19.Text = "Second item:";
+            // 
+            // btn_addRecipe
+            // 
+            btn_addRecipe.Location = new Point(161, 411);
+            btn_addRecipe.Name = "btn_addRecipe";
+            btn_addRecipe.Size = new Size(332, 34);
+            btn_addRecipe.TabIndex = 2;
+            btn_addRecipe.Text = "Add recipe";
+            btn_addRecipe.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(label17);
+            groupBox4.Controls.Add(recipes_nb_resultCount);
+            groupBox4.Controls.Add(recipes_tb_result);
+            groupBox4.Controls.Add(label16);
+            groupBox4.Controls.Add(label15);
+            groupBox4.Controls.Add(recipes_nb_firstItemCount);
+            groupBox4.Controls.Add(recipes_tb_firstItem);
+            groupBox4.Controls.Add(label14);
+            groupBox4.Location = new Point(161, 6);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(332, 179);
+            groupBox4.TabIndex = 1;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Default";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(6, 111);
+            label17.Name = "label17";
+            label17.Size = new Size(76, 15);
+            label17.TabIndex = 7;
+            label17.Text = "Result count:";
+            // 
+            // recipes_nb_resultCount
+            // 
+            recipes_nb_resultCount.Location = new Point(88, 109);
+            recipes_nb_resultCount.Name = "recipes_nb_resultCount";
+            recipes_nb_resultCount.Size = new Size(238, 23);
+            recipes_nb_resultCount.TabIndex = 6;
+            // 
+            // recipes_tb_result
+            // 
+            recipes_tb_result.Location = new Point(54, 80);
+            recipes_tb_result.Name = "recipes_tb_result";
+            recipes_tb_result.Size = new Size(272, 23);
+            recipes_tb_result.TabIndex = 5;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(6, 83);
+            label16.Name = "label16";
+            label16.Size = new Size(42, 15);
+            label16.TabIndex = 4;
+            label16.Text = "Result:";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(6, 53);
+            label15.Name = "label15";
+            label15.Size = new Size(93, 15);
+            label15.TabIndex = 3;
+            label15.Text = "First item count:";
+            // 
+            // recipes_nb_firstItemCount
+            // 
+            recipes_nb_firstItemCount.Location = new Point(105, 51);
+            recipes_nb_firstItemCount.Name = "recipes_nb_firstItemCount";
+            recipes_nb_firstItemCount.Size = new Size(221, 23);
+            recipes_nb_firstItemCount.TabIndex = 2;
+            // 
+            // recipes_tb_firstItem
+            // 
+            recipes_tb_firstItem.Location = new Point(71, 22);
+            recipes_tb_firstItem.Name = "recipes_tb_firstItem";
+            recipes_tb_firstItem.Size = new Size(255, 23);
+            recipes_tb_firstItem.TabIndex = 1;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(6, 25);
+            label14.Name = "label14";
+            label14.Size = new Size(59, 15);
+            label14.TabIndex = 0;
+            label14.Text = "First item:";
+            // 
+            // recipes_ListBox
+            // 
+            recipes_ListBox.FormattingEnabled = true;
+            recipes_ListBox.ItemHeight = 15;
+            recipes_ListBox.Location = new Point(6, 6);
+            recipes_ListBox.Name = "recipes_ListBox";
+            recipes_ListBox.Size = new Size(149, 439);
+            recipes_ListBox.TabIndex = 0;
+            // 
             // tabPage5
             // 
+            tabPage5.Controls.Add(label20);
+            tabPage5.Controls.Add(btn_deleteImage);
+            tabPage5.Controls.Add(btn_addImage);
+            tabPage5.Controls.Add(pictureBox);
+            tabPage5.Controls.Add(images_ListBox);
             tabPage5.Location = new Point(4, 24);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(499, 455);
+            tabPage5.Size = new Size(506, 455);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "Images";
             tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.BackColor = Color.Transparent;
+            label20.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            label20.Location = new Point(166, 101);
+            label20.Name = "label20";
+            label20.Size = new Size(98, 21);
+            label20.TabIndex = 4;
+            label20.Text = "Select image";
+            // 
+            // btn_deleteImage
+            // 
+            btn_deleteImage.Location = new Point(329, 6);
+            btn_deleteImage.Name = "btn_deleteImage";
+            btn_deleteImage.Size = new Size(157, 40);
+            btn_deleteImage.TabIndex = 3;
+            btn_deleteImage.Text = "Delete selected image";
+            btn_deleteImage.UseVisualStyleBackColor = true;
+            // 
+            // btn_addImage
+            // 
+            btn_addImage.Location = new Point(166, 6);
+            btn_addImage.Name = "btn_addImage";
+            btn_addImage.Size = new Size(157, 40);
+            btn_addImage.TabIndex = 2;
+            btn_addImage.Text = "Add image";
+            btn_addImage.UseVisualStyleBackColor = true;
+            btn_addImage.Click += btn_addImage_Click;
+            // 
+            // pictureBox
+            // 
+            pictureBox.BackColor = Color.Gray;
+            pictureBox.Location = new Point(166, 125);
+            pictureBox.Name = "pictureBox";
+            pictureBox.Size = new Size(320, 320);
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox.TabIndex = 1;
+            pictureBox.TabStop = false;
+            // 
+            // images_ListBox
+            // 
+            images_ListBox.FormattingEnabled = true;
+            images_ListBox.ItemHeight = 15;
+            images_ListBox.Location = new Point(6, 6);
+            images_ListBox.Name = "images_ListBox";
+            images_ListBox.Size = new Size(154, 439);
+            images_ListBox.TabIndex = 0;
+            images_ListBox.SelectedIndexChanged += images_ListBox_SelectedIndexChanged;
+            // 
+            // lb_modList
+            // 
+            lb_modList.FormattingEnabled = true;
+            lb_modList.ItemHeight = 15;
+            lb_modList.Location = new Point(12, 104);
+            lb_modList.Name = "lb_modList";
+            lb_modList.Size = new Size(171, 424);
+            lb_modList.TabIndex = 6;
+            lb_modList.SelectedIndexChanged += lb_modList_SelectedIndexChanged;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 540);
+            ClientSize = new Size(713, 540);
+            Controls.Add(lb_modList);
             Controls.Add(tabControl1);
             Controls.Add(label1);
             Controls.Add(tb_loc);
             Controls.Add(tb_ModName);
-            Controls.Add(treeViewModList);
             Controls.Add(btn_CreateMod);
             Name = "Form1";
             Text = "Farmcoz mod tool - SELECT MOD";
@@ -515,10 +873,26 @@
             tabPage2.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)items_nb_growing_time).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)items_nb_stacksize).EndInit();
+            tabPage3.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)drops_nb_maxCount).EndInit();
+            ((System.ComponentModel.ISupportInitialize)drops_nb_probability).EndInit();
+            tabPage4.ResumeLayout(false);
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)recipes_nb_secondItemCount).EndInit();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)recipes_nb_resultCount).EndInit();
+            ((System.ComponentModel.ISupportInitialize)recipes_nb_firstItemCount).EndInit();
+            tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -526,46 +900,79 @@
         #endregion
 
         private Button btn_CreateMod;
-        private TreeView treeViewModList;
         private TextBox tb_ModName;
         private TextBox tb_loc;
         private Label label1;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox config_tb_name;
         private TabPage tabPage2;
         private TabPage tabPage3;
         private TabPage tabPage4;
         private TabPage tabPage5;
-        private Button button1;
+        private Button btn_addItem;
         private GroupBox groupBox2;
         private GroupBox groupBox1;
-        private TextBox textBox2;
+        private TextBox items_tb_name;
         private Label label7;
         private Label label3;
         private Label label6;
         private Label label4;
         private Label label5;
-        private ListBox X;
+        private ListBox items_ListBox;
         private Label label9;
-        private TextBox textBox3;
+        private TextBox items_tb_grow_id;
         private Label label8;
-        private NumericUpDown numericUpDown1;
-        private TextBox textBox5;
-        private ComboBox comboBox1;
-        private NumericUpDown numericUpDown2;
-        private CheckBox checkBox1;
-        private CheckBox checkBox12;
-        private CheckBox checkBox11;
-        private CheckBox checkBox10;
-        private CheckBox checkBox9;
-        private CheckBox checkBox8;
-        private CheckBox checkBox7;
-        private CheckBox checkBox6;
-        private CheckBox checkBox5;
-        private CheckBox checkBox4;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
+        private NumericUpDown items_nb_stacksize;
+        private TextBox items_tb_description;
+        private ComboBox items_cb_texture;
+        private NumericUpDown items_nb_growing_time;
+        private CheckBox items_chb_unplacable;
+        private CheckBox items_chb_sound_wooden;
+        private CheckBox items_chb_outlinable;
+        private CheckBox items_chb_entitable;
+        private CheckBox items_chb_grow_at_night;
+        private CheckBox items_chb_collidable;
+        private CheckBox items_chb_sound_organic;
+        private CheckBox items_chb_eatable;
+        private CheckBox items_chb_compostable;
+        private CheckBox items_chb_ununlockable;
+        private CheckBox items_chb_plantable;
+        private CheckBox items_chb_understructable;
+        private Button btn_addDrop;
+        private GroupBox groupBox3;
+        private TextBox drops_tb_fromID;
+        private Label label10;
+        private ListBox drops_ListBox;
+        private NumericUpDown drops_nb_maxCount;
+        private NumericUpDown drops_nb_probability;
+        private Label label13;
+        private Label label12;
+        private TextBox drops_tb_dropID;
+        private Label label11;
+        private Button btn_addRecipe;
+        private GroupBox groupBox4;
+        private NumericUpDown recipes_nb_firstItemCount;
+        private TextBox recipes_tb_firstItem;
+        private Label label14;
+        private ListBox recipes_ListBox;
+        private GroupBox groupBox5;
+        private Label label18;
+        private TextBox recipes_tb_secondItem;
+        private NumericUpDown recipes_nb_secondItemCount;
+        private Label label19;
+        private Label label17;
+        private NumericUpDown recipes_nb_resultCount;
+        private TextBox recipes_tb_result;
+        private Label label16;
+        private Label label15;
+        private Button btn_deleteImage;
+        private Button btn_addImage;
+        private PictureBox pictureBox;
+        private ListBox images_ListBox;
+        private ListBox lb_modList;
+        private Label label20;
+        private OpenFileDialog openFileDialog1;
     }
 }

@@ -133,6 +133,44 @@ namespace Farmcoz_mod_tool
             label20.Text = fileName;
         }
 
+
+        private void items_btn_new_Click(object sender, EventArgs e)
+        {
+            items_ListBox.ClearSelected();
+            btn_addItem.Text = "Add item";
+        }
+
+        private void drops_btn_new_Click(object sender, EventArgs e)
+        {
+            drops_ListBox.ClearSelected();
+            btn_addDrop.Text = "Add drop";
+        }
+
+        private void recipes_btn_new_Click(object sender, EventArgs e)
+        {
+            recipes_ListBox.ClearSelected();
+            btn_addRecipe.Text = "Add recipe";
+        }
+        
+        //TODO:
+        // Uzupe³nianie wartoœci z textbox na new item()
+
+
+        private void items_ListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btn_addItem.Text = "Edit item";
+        }
+
+        private void drops_ListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btn_addDrop.Text = "Edit drop";
+        }
+
+        private void recipes_ListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btn_addRecipe.Text = "Edit recipe";
+        }
+
         //private void btn_deleteImage_Click(object sender, EventArgs e)
         //{
         //    if (images_ListBox.SelectedItem != null)

@@ -39,6 +39,7 @@ namespace Farmcoz_mod_tool
             label2 = new Label();
             config_tb_name = new TextBox();
             tabPage2 = new TabPage();
+            items_btn_new = new Button();
             groupBox2 = new GroupBox();
             items_nb_growing_time = new NumericUpDown();
             label9 = new Label();
@@ -69,6 +70,7 @@ namespace Farmcoz_mod_tool
             items_ListBox = new ListBox();
             btn_addItem = new Button();
             tabPage3 = new TabPage();
+            drops_btn_new = new Button();
             btn_addDrop = new Button();
             groupBox3 = new GroupBox();
             drops_nb_maxCount = new NumericUpDown();
@@ -81,6 +83,7 @@ namespace Farmcoz_mod_tool
             label10 = new Label();
             drops_ListBox = new ListBox();
             tabPage4 = new TabPage();
+            recipes_btn_new = new Button();
             groupBox5 = new GroupBox();
             label18 = new Label();
             recipes_tb_secondItem = new TextBox();
@@ -203,6 +206,7 @@ namespace Farmcoz_mod_tool
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(items_btn_new);
             tabPage2.Controls.Add(groupBox2);
             tabPage2.Controls.Add(groupBox1);
             tabPage2.Controls.Add(items_ListBox);
@@ -214,6 +218,16 @@ namespace Farmcoz_mod_tool
             tabPage2.TabIndex = 1;
             tabPage2.Text = "items.json";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // items_btn_new
+            // 
+            items_btn_new.Location = new Point(6, 5);
+            items_btn_new.Name = "items_btn_new";
+            items_btn_new.Size = new Size(149, 23);
+            items_btn_new.TabIndex = 10;
+            items_btn_new.Text = "New item";
+            items_btn_new.UseVisualStyleBackColor = true;
+            items_btn_new.Click += items_btn_new_Click;
             // 
             // groupBox2
             // 
@@ -488,10 +502,11 @@ namespace Farmcoz_mod_tool
             // 
             items_ListBox.FormattingEnabled = true;
             items_ListBox.ItemHeight = 15;
-            items_ListBox.Location = new Point(6, 8);
+            items_ListBox.Location = new Point(6, 36);
             items_ListBox.Name = "items_ListBox";
-            items_ListBox.Size = new Size(149, 439);
+            items_ListBox.Size = new Size(149, 409);
             items_ListBox.TabIndex = 1;
+            items_ListBox.SelectedIndexChanged += items_ListBox_SelectedIndexChanged;
             // 
             // btn_addItem
             // 
@@ -504,6 +519,7 @@ namespace Farmcoz_mod_tool
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(drops_btn_new);
             tabPage3.Controls.Add(btn_addDrop);
             tabPage3.Controls.Add(groupBox3);
             tabPage3.Controls.Add(drops_ListBox);
@@ -514,6 +530,16 @@ namespace Farmcoz_mod_tool
             tabPage3.TabIndex = 2;
             tabPage3.Text = "drops.json";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // drops_btn_new
+            // 
+            drops_btn_new.Location = new Point(6, 5);
+            drops_btn_new.Name = "drops_btn_new";
+            drops_btn_new.Size = new Size(149, 23);
+            drops_btn_new.TabIndex = 3;
+            drops_btn_new.Text = "New drop";
+            drops_btn_new.UseVisualStyleBackColor = true;
+            drops_btn_new.Click += drops_btn_new_Click;
             // 
             // btn_addDrop
             // 
@@ -610,13 +636,15 @@ namespace Farmcoz_mod_tool
             drops_ListBox.FormattingEnabled = true;
             drops_ListBox.ItemHeight = 15;
             drops_ListBox.Items.AddRange(new object[] { "" });
-            drops_ListBox.Location = new Point(6, 6);
+            drops_ListBox.Location = new Point(6, 36);
             drops_ListBox.Name = "drops_ListBox";
-            drops_ListBox.Size = new Size(149, 439);
+            drops_ListBox.Size = new Size(149, 409);
             drops_ListBox.TabIndex = 0;
+            drops_ListBox.SelectedIndexChanged += drops_ListBox_SelectedIndexChanged;
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(recipes_btn_new);
             tabPage4.Controls.Add(groupBox5);
             tabPage4.Controls.Add(btn_addRecipe);
             tabPage4.Controls.Add(groupBox4);
@@ -628,6 +656,16 @@ namespace Farmcoz_mod_tool
             tabPage4.TabIndex = 3;
             tabPage4.Text = "recipes.json";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // recipes_btn_new
+            // 
+            recipes_btn_new.Location = new Point(6, 5);
+            recipes_btn_new.Name = "recipes_btn_new";
+            recipes_btn_new.Size = new Size(149, 23);
+            recipes_btn_new.TabIndex = 4;
+            recipes_btn_new.Text = "New recipe";
+            recipes_btn_new.UseVisualStyleBackColor = true;
+            recipes_btn_new.Click += recipes_btn_new_Click;
             // 
             // groupBox5
             // 
@@ -768,10 +806,11 @@ namespace Farmcoz_mod_tool
             // 
             recipes_ListBox.FormattingEnabled = true;
             recipes_ListBox.ItemHeight = 15;
-            recipes_ListBox.Location = new Point(6, 6);
+            recipes_ListBox.Location = new Point(6, 36);
             recipes_ListBox.Name = "recipes_ListBox";
-            recipes_ListBox.Size = new Size(149, 439);
+            recipes_ListBox.Size = new Size(149, 409);
             recipes_ListBox.TabIndex = 0;
+            recipes_ListBox.SelectedIndexChanged += recipes_ListBox_SelectedIndexChanged;
             // 
             // tabPage5
             // 
@@ -962,5 +1001,8 @@ namespace Farmcoz_mod_tool
         private Label label20;
         private OpenFileDialog openFileDialog1;
         private PixelBox pictureBox;
+        private Button items_btn_new;
+        private Button drops_btn_new;
+        private Button recipes_btn_new;
     }
 }

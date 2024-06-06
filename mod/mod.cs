@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Farmcoz_mod_tool.mod
 {
-    internal class Mod
+    public class Mod
     {
         public List<Item> items = new List<Item>();
         public List<Drop> drops = new List<Drop>();

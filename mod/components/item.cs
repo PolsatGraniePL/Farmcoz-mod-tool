@@ -1,41 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Farmcoz_mod_tool.mod.components
 {
-    internal class Item
+    public class Item
     {
-
         //DEFAULT
-        private string name;
-        private string texture;
-        private string description;
-        private int flags;
-        private int stack_size;
+        [JsonProperty("name")]
+        public string Name { get; private set; }
+        [JsonProperty("texture")]
+        public string Texture { get; private set; }
+        [JsonProperty("description")]
+        public string Description { get; private set; }
+        [JsonProperty("flags")]
+        public int Flags { get; private set; }
+        [JsonProperty("stack_size")]
+        public int StackSize { get; private set; }
 
         //GROW
-        private string grown_id;
-        private float growing_time;
+        [JsonProperty("grown_id")]
+        public string GrownId { get; private set; }
+        [JsonProperty("growing_time")]
+        public float GrowingTime { get; private set; }
 
-        public Item(string Iname, string Itexture, string Idescription, int Iflags, int Istack_size) { 
-            name = Iname;
-            texture = Itexture;
-            description = Idescription; 
-            flags = Iflags;
-            stack_size = Istack_size;
-        }
-        public Item(string Iname, string Itexture, string Idescription, int Iflags, int Istack_size, string Igrown_id, float Igrowing_time) { 
-            name = Iname;
-            texture = Itexture;
-            description = Idescription; 
-            flags = Iflags;
-            stack_size = Istack_size;
-            grown_id = Igrown_id;
-            growing_time = Igrowing_time;
+        public Item() { }
+
+        public Item(string name, string texture, string description, int flags, int stackSize)
+        {
+            Name = name;
+            Texture = texture;
+            Description = description;
+            Flags = flags;
+            StackSize = stackSize;
         }
 
+        public Item(string name, string texture, string description, int flags, int stackSize, string grownId, float growingTime)
+        {
+            Name = name;
+            Texture = texture;
+            Description = description;
+            Flags = flags;
+            StackSize = stackSize;
+            GrownId = grownId;
+            GrowingTime = growingTime;
+        }
     }
 }

@@ -36,6 +36,7 @@ namespace Farmcoz_mod_tool
             label1 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            config_btn = new Button();
             label2 = new Label();
             config_tb_name = new TextBox();
             tabPage2 = new TabPage();
@@ -179,6 +180,7 @@ namespace Farmcoz_mod_tool
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(config_btn);
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(config_tb_name);
             tabPage1.Location = new Point(4, 24);
@@ -189,10 +191,20 @@ namespace Farmcoz_mod_tool
             tabPage1.Text = "config.json";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // config_btn
+            // 
+            config_btn.Location = new Point(6, 6);
+            config_btn.Name = "config_btn";
+            config_btn.Size = new Size(494, 23);
+            config_btn.TabIndex = 2;
+            config_btn.Text = "Save";
+            config_btn.UseVisualStyleBackColor = true;
+            config_btn.Click += config_btn_Click;
+            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(6, 14);
+            label2.Location = new Point(6, 38);
             label2.Name = "label2";
             label2.Size = new Size(68, 15);
             label2.TabIndex = 1;
@@ -200,7 +212,7 @@ namespace Farmcoz_mod_tool
             // 
             // config_tb_name
             // 
-            config_tb_name.Location = new Point(80, 11);
+            config_tb_name.Location = new Point(80, 35);
             config_tb_name.Name = "config_tb_name";
             config_tb_name.Size = new Size(420, 23);
             config_tb_name.TabIndex = 0;
@@ -447,6 +459,7 @@ namespace Farmcoz_mod_tool
             // 
             // items_cb_texture
             // 
+            items_cb_texture.DropDownStyle = ComboBoxStyle.DropDownList;
             items_cb_texture.FormattingEnabled = true;
             items_cb_texture.Location = new Point(60, 51);
             items_cb_texture.Name = "items_cb_texture";
@@ -1029,5 +1042,6 @@ namespace Farmcoz_mod_tool
         private Button items_btn_new;
         private Button drops_btn_new;
         private Button recipes_btn_new;
+        private Button config_btn;
     }
 }

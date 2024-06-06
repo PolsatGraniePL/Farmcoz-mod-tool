@@ -14,18 +14,12 @@ namespace Farmcoz_mod_tool
         public Form1()
         {
             InitializeComponent();
-            Application.ApplicationExit += new EventHandler(this.OnApplicationExit);
         }
 
         public static Mod currentMod;
         private JsonManager<Item> jsonManagerItem;
         private JsonManager<Drop> jsonManagerDrop;
         private JsonManager<Recipe> jsonManagerRecipe;
-
-        private void OnApplicationExit(object sender, EventArgs e)
-        {
-            //...
-        }
 
         private void btn_CreateMod_Click(object sender, EventArgs e)
         {
@@ -46,12 +40,17 @@ namespace Farmcoz_mod_tool
 
         private void refreshModList()
         {
-            string[] dirs = FileManager.getDirs(tb_loc.Text);
-            lb_modList.Items.Clear();
-            foreach (string dir in dirs)
+            try
             {
-                lb_modList.Items.Add(Path.GetFileName(dir));
+                string[] dirs = FileManager.getDirs(tb_loc.Text);
+                lb_modList.Items.Clear();
+                foreach (string dir in dirs)
+                {
+                    lb_modList.Items.Add(Path.GetFileName(dir));
+                }
             }
+            catch { lb_modList.Items.Clear(); }
+            
         }
 
         private void refreshPictures()
@@ -63,9 +62,26 @@ namespace Farmcoz_mod_tool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            try
+            {
+                var data = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "farmcoz", "MoodTool.json")));
+                tb_loc.Text = data.location;
+            }
+            catch
+            {
+                tb_loc.Text = FileManager.GetUserModsLocation();
+                var data = new
+                {
+                    location = tb_loc.Text
+                };
+
+                string json = JsonConvert.SerializeObject(data, Formatting.Indented);
+                File.WriteAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "farmcoz", "MoodTool.json"), json);
+            }
+
             tabControl1.Visible = false;
             currentMod = null;
-            tb_loc.Text = FileManager.GetUserModsLocation();
+
             refreshModList();
         }
 
@@ -83,7 +99,8 @@ namespace Farmcoz_mod_tool
                 var data = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(Path.Combine(tb_loc.Text, currentMod.name, "config.json")));
                 config_tb_name.Text = data.name;
             }
-            catch {
+            catch
+            {
                 config_tb_name.Text = currentMod.name;
                 var data = new
                 {
@@ -504,6 +521,18 @@ namespace Farmcoz_mod_tool
             string json = JsonConvert.SerializeObject(data, Formatting.Indented);
 
             File.WriteAllText(Path.Combine(tb_loc.Text, currentMod.name, "config.json"), json);
+        }
+
+        private void tb_loc_TextChanged(object sender, EventArgs e)
+        {
+            var data = new
+            {
+                location = tb_loc.Text
+            };
+
+            string json = JsonConvert.SerializeObject(data, Formatting.Indented);
+            File.WriteAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "farmcoz", "MoodTool.json"), json);
+            refreshModList();
         }
     }
 }

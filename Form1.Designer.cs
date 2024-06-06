@@ -108,6 +108,8 @@ namespace Farmcoz_mod_tool
             images_ListBox = new ListBox();
             lb_modList = new ListBox();
             openFileDialog1 = new OpenFileDialog();
+            label21 = new Label();
+            label22 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -154,6 +156,7 @@ namespace Farmcoz_mod_tool
             tb_loc.PlaceholderText = "Mods folder location";
             tb_loc.Size = new Size(595, 23);
             tb_loc.TabIndex = 3;
+            tb_loc.TextChanged += tb_loc_TextChanged;
             // 
             // label1
             // 
@@ -919,11 +922,32 @@ namespace Farmcoz_mod_tool
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.BackColor = Color.Transparent;
+            label21.Location = new Point(12, 531);
+            label21.Name = "label21";
+            label21.Size = new Size(129, 15);
+            label21.TabIndex = 7;
+            label21.Text = "Author: PolsatGraniePL";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(606, 531);
+            label22.Name = "label22";
+            label22.Size = new Size(93, 15);
+            label22.TabIndex = 8;
+            label22.Text = "2024 | Copyright";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(713, 540);
+            ClientSize = new Size(710, 551);
+            Controls.Add(label22);
+            Controls.Add(label21);
             Controls.Add(lb_modList);
             Controls.Add(tabControl1);
             Controls.Add(label1);
@@ -1043,5 +1067,7 @@ namespace Farmcoz_mod_tool
         private Button drops_btn_new;
         private Button recipes_btn_new;
         private Button config_btn;
+        private Label label21;
+        private Label label22;
     }
 }

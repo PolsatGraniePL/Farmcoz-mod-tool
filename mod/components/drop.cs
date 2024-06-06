@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Farmcoz_mod_tool.mod.components
 {
-    internal class drop
+    internal class Drop
     {
         //DEFAULT
         private string from_id;

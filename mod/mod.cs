@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace Farmcoz_mod_tool.mod
 {
-    internal class mod
+    internal class Mod
     {
-        private List<item> items = new List<item>();
-        private List<drop> drops = new List<drop>();
-        private List<recipe> recipes = new List<recipe>();
+        public List<Item> items = new List<Item>();
+        public List<Drop> drops = new List<Drop>();
+        public List<Recipe> recipes = new List<Recipe>();
 
-        private string name;
+        public string name;
+        public Mod(string Iname) { 
+            name = Iname;
+        }
     }
 }

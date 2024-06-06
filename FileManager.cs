@@ -22,7 +22,7 @@ namespace Farmcoz_mod_tool
 
         public static string[] getImages(string loc)
         {
-            var files = Directory.EnumerateFiles(Path.Combine(loc, Form1.currentMod), "*.png");
+            var files = Directory.EnumerateFiles(Path.Combine(loc, Form1.currentMod.name), "*.png");
             return files.Select(Path.GetFileName).ToArray();
         }
 

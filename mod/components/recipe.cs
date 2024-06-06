@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Farmcoz_mod_tool.mod.components
 {
-    internal class recipe
+    internal class Recipe
     {
         //DEFAULT
         private string first_item;

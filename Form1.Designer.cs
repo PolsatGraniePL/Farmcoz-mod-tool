@@ -175,6 +175,7 @@ namespace Farmcoz_mod_tool
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(514, 483);
             tabControl1.TabIndex = 5;
+            tabControl1.Selected += tabControl1_Selected;
             // 
             // tabPage1
             // 
@@ -193,15 +194,15 @@ namespace Farmcoz_mod_tool
             label2.AutoSize = true;
             label2.Location = new Point(6, 14);
             label2.Name = "label2";
-            label2.Size = new Size(42, 15);
+            label2.Size = new Size(68, 15);
             label2.TabIndex = 1;
-            label2.Text = "Name:";
+            label2.Text = "Mod name:";
             // 
             // config_tb_name
             // 
-            config_tb_name.Location = new Point(54, 11);
+            config_tb_name.Location = new Point(80, 11);
             config_tb_name.Name = "config_tb_name";
-            config_tb_name.Size = new Size(446, 23);
+            config_tb_name.Size = new Size(420, 23);
             config_tb_name.TabIndex = 0;
             // 
             // tabPage2
@@ -244,7 +245,10 @@ namespace Farmcoz_mod_tool
             // 
             // items_nb_growing_time
             // 
+            items_nb_growing_time.DecimalPlaces = 1;
+            items_nb_growing_time.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             items_nb_growing_time.Location = new Point(94, 52);
+            items_nb_growing_time.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             items_nb_growing_time.Name = "items_nb_growing_time";
             items_nb_growing_time.Size = new Size(232, 23);
             items_nb_growing_time.TabIndex = 11;
@@ -261,6 +265,7 @@ namespace Farmcoz_mod_tool
             // items_tb_grow_id
             // 
             items_tb_grow_id.Location = new Point(70, 22);
+            items_tb_grow_id.MaxLength = 255;
             items_tb_grow_id.Name = "items_tb_grow_id";
             items_tb_grow_id.Size = new Size(256, 23);
             items_tb_grow_id.TabIndex = 8;
@@ -427,9 +432,11 @@ namespace Farmcoz_mod_tool
             // items_nb_stacksize
             // 
             items_nb_stacksize.Location = new Point(72, 110);
+            items_nb_stacksize.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             items_nb_stacksize.Name = "items_nb_stacksize";
             items_nb_stacksize.Size = new Size(254, 23);
             items_nb_stacksize.TabIndex = 10;
+            items_nb_stacksize.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // items_tb_description
             // 
@@ -449,6 +456,7 @@ namespace Farmcoz_mod_tool
             // items_tb_name
             // 
             items_tb_name.Location = new Point(54, 22);
+            items_tb_name.MaxLength = 255;
             items_tb_name.Name = "items_tb_name";
             items_tb_name.Size = new Size(272, 23);
             items_tb_name.TabIndex = 2;
@@ -516,6 +524,7 @@ namespace Farmcoz_mod_tool
             btn_addItem.TabIndex = 0;
             btn_addItem.Text = "Add item";
             btn_addItem.UseVisualStyleBackColor = true;
+            btn_addItem.Click += btn_addItem_Click;
             // 
             // tabPage3
             // 
@@ -549,6 +558,7 @@ namespace Farmcoz_mod_tool
             btn_addDrop.TabIndex = 2;
             btn_addDrop.Text = "Add drop";
             btn_addDrop.UseVisualStyleBackColor = true;
+            btn_addDrop.Click += btn_addDrop_Click;
             // 
             // groupBox3
             // 
@@ -570,13 +580,18 @@ namespace Farmcoz_mod_tool
             // drops_nb_maxCount
             // 
             drops_nb_maxCount.Location = new Point(79, 80);
+            drops_nb_maxCount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             drops_nb_maxCount.Name = "drops_nb_maxCount";
             drops_nb_maxCount.Size = new Size(247, 23);
             drops_nb_maxCount.TabIndex = 8;
+            drops_nb_maxCount.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // drops_nb_probability
             // 
+            drops_nb_probability.DecimalPlaces = 1;
+            drops_nb_probability.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             drops_nb_probability.Location = new Point(79, 110);
+            drops_nb_probability.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             drops_nb_probability.Name = "drops_nb_probability";
             drops_nb_probability.Size = new Size(247, 23);
             drops_nb_probability.TabIndex = 7;
@@ -602,6 +617,7 @@ namespace Farmcoz_mod_tool
             // drops_tb_dropID
             // 
             drops_tb_dropID.Location = new Point(63, 51);
+            drops_tb_dropID.MaxLength = 255;
             drops_tb_dropID.Name = "drops_tb_dropID";
             drops_tb_dropID.Size = new Size(263, 23);
             drops_tb_dropID.TabIndex = 3;
@@ -618,6 +634,7 @@ namespace Farmcoz_mod_tool
             // drops_tb_fromID
             // 
             drops_tb_fromID.Location = new Point(63, 22);
+            drops_tb_fromID.MaxLength = 255;
             drops_tb_fromID.Name = "drops_tb_fromID";
             drops_tb_fromID.Size = new Size(263, 23);
             drops_tb_fromID.TabIndex = 1;
@@ -635,7 +652,6 @@ namespace Farmcoz_mod_tool
             // 
             drops_ListBox.FormattingEnabled = true;
             drops_ListBox.ItemHeight = 15;
-            drops_ListBox.Items.AddRange(new object[] { "" });
             drops_ListBox.Location = new Point(6, 36);
             drops_ListBox.Name = "drops_ListBox";
             drops_ListBox.Size = new Size(149, 409);
@@ -692,6 +708,7 @@ namespace Farmcoz_mod_tool
             // recipes_tb_secondItem
             // 
             recipes_tb_secondItem.Location = new Point(88, 22);
+            recipes_tb_secondItem.MaxLength = 255;
             recipes_tb_secondItem.Name = "recipes_tb_secondItem";
             recipes_tb_secondItem.Size = new Size(238, 23);
             recipes_tb_secondItem.TabIndex = 9;
@@ -720,6 +737,7 @@ namespace Farmcoz_mod_tool
             btn_addRecipe.TabIndex = 2;
             btn_addRecipe.Text = "Add recipe";
             btn_addRecipe.UseVisualStyleBackColor = true;
+            btn_addRecipe.Click += btn_addRecipe_Click;
             // 
             // groupBox4
             // 
@@ -750,13 +768,16 @@ namespace Farmcoz_mod_tool
             // recipes_nb_resultCount
             // 
             recipes_nb_resultCount.Location = new Point(88, 109);
+            recipes_nb_resultCount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             recipes_nb_resultCount.Name = "recipes_nb_resultCount";
             recipes_nb_resultCount.Size = new Size(238, 23);
             recipes_nb_resultCount.TabIndex = 6;
+            recipes_nb_resultCount.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // recipes_tb_result
             // 
             recipes_tb_result.Location = new Point(54, 80);
+            recipes_tb_result.MaxLength = 255;
             recipes_tb_result.Name = "recipes_tb_result";
             recipes_tb_result.Size = new Size(272, 23);
             recipes_tb_result.TabIndex = 5;
@@ -782,13 +803,17 @@ namespace Farmcoz_mod_tool
             // recipes_nb_firstItemCount
             // 
             recipes_nb_firstItemCount.Location = new Point(105, 51);
+            recipes_nb_firstItemCount.Maximum = new decimal(new int[] { 64, 0, 0, 0 });
+            recipes_nb_firstItemCount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             recipes_nb_firstItemCount.Name = "recipes_nb_firstItemCount";
             recipes_nb_firstItemCount.Size = new Size(221, 23);
             recipes_nb_firstItemCount.TabIndex = 2;
+            recipes_nb_firstItemCount.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // recipes_tb_firstItem
             // 
             recipes_tb_firstItem.Location = new Point(71, 22);
+            recipes_tb_firstItem.MaxLength = 255;
             recipes_tb_firstItem.Name = "recipes_tb_firstItem";
             recipes_tb_firstItem.Size = new Size(255, 23);
             recipes_tb_firstItem.TabIndex = 1;

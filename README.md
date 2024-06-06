@@ -1,4 +1,7 @@
 # Farmcoz mod tool
 
-Projekt na szybko, wykonany w jedną noc. (Nieskończony)
-![image](https://github.com/PolsatGraniePL/Farmcoz-mod-tool/assets/88681446/91c28229-0640-4470-9627-540ec8d049fd)
+Za kilka godzin pojawi się installer do mod toola.
+
+Projekt na szybko, wykonany w kilka wieczorów.
+![image](https://github.com/PolsatGraniePL/Farmcoz-mod-tool/assets/88681446/aef21b24-b6c5-4d60-a890-219c041ef5ee)
+
